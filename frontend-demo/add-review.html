@@ -60,7 +60,6 @@
             background-clip: text;
             -webkit-text-fill-color: transparent;
         }
-
         .search-bar {
             display: flex;
             gap: 10px;
@@ -385,6 +384,54 @@
         footer:hover {
             background-color: rgba(44, 62, 80, 0.8);
         }
+
+        .form-container {
+            background-color: white;
+            padding: 30px;
+            border-radius: var(--border-radius);
+            box-shadow: var(--box-shadow);
+            margin-bottom: 20px;
+            min-width: 800px;
+        }
+
+        .form-container h1 {
+            font-size: 2rem;
+            font-weight: bold;
+            color: var(--text-color);
+            margin-bottom: 20px;
+        }
+
+        .form-container label {
+            display: block;
+            margin-bottom: 8px;
+            color: var(--text-color);
+        }
+
+        .form-container select,
+        .form-container input,
+        .form-container textarea {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 16px;
+            border: 1px solid #ccc;
+            border-radius: var(--border-radius);
+            font-size: 14px;
+        }
+
+        .form-container button {
+            background-color: var(--primary-color);
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: var(--border-radius);
+            cursor: pointer;
+            transition: background-color 0.3s, box-shadow 0.3s;
+        }
+
+        .form-container button:hover {
+            background-color: #e55b40;
+            box-shadow: var(--hover-shadow);
+        }
     </style>
 </head>
 
@@ -409,99 +456,22 @@
         </div>
     </header>
     <main>
-        <section class="highlights-container">
-            <h2><i class="fas fa-star"></i> Featured highlights</h2>
-            <div class="highlight-items">
-                <div class="highlight-item">
-                    <img src="https://placehold.co/100" alt="Placeholder image">
-                    <div>
-                        <h2>Popular lists</h2>
-                        <p>Discover the most popular lists curated by music lovers.</p>
-                        <div class="user-info">
-                            <img src="https://placehold.co/24" alt="User avatar">
-                            <span class="highlight-username"><a href="#">SushiRollSama</a></span>
-                        </div>
-                    </div>
-                </div>
-                <div class="highlight-item">
-                    <img src="https://placehold.co/100" alt="Placeholder image">
-                    <div>
-                        <h2>Trending new albums</h2>
-                        <p>Stay updated with the latest trending albums in the music scene.</p>
-                        <div class="user-info">
-                            <img src="https://placehold.co/24" alt="User avatar">
-                            <span class="highlight-username"><a href="#">OBackendNemVaiDarTrabalhoHein</a></span>
-                        </div>
-                    </div>
-                </div>
-            </div>
+        <section class="form-container">
+            <h1>Add a review</h1>
+            <form method="POST" action="#">
+                <label for="song">Música:</label>
+                <select id="song" name="song_id">
+                    <option value="1">Song Title 1 - Artist 1</option>
+                    <option value="2">Song Title 2 - Artist 2</option>
+                    <option value="3">Song Title 3 - Artist 3</option>
+                </select>
+                <label for="rating">Rating (0-5):</label>
+                <input id="rating" type="number" name="rating" step="0.1" min="0" max="5" required>
+                <label for="review">Review:</label>
+                <textarea id="review" name="review"></textarea>
+                <button type="submit">Post</button>
+            </form>
         </section>
-        <section class="upcoming-events-container">
-            <h2><i class="fas fa-calendar-alt"></i> Upcoming music events</h2>
-            <div class="event-items">
-                <div class="event-item">
-                    <img src="https://placehold.co/300" alt="Placeholder image">
-                    <h2>RockMassayó 2025</h2>
-                    <p>15 Mar 2025</p>
-                </div>
-                <div class="event-item">
-                    <img src="https://placehold.co/300" alt="Placeholder image">
-                    <h2>Jazzghost</h2>
-                    <p>22 Apr 2025</p>
-                </div>
-                <div class="event-item">
-                    <img src="https://placehold.co/300" alt="Placeholder image">
-                    <h2>Indie Bullshit Noone Cares</h2>
-                    <p>30 May 2025</p>
-                </div>
-            </div>
-        </section>
-        <section class="user-curated-lists-container">
-            <div class="user-curated-lists-header">
-                <h2><i class="fas fa-users"></i> User-curated lists</h2>
-            </div>
-            <div class="user-curated-lists-items">
-                <div class="user-curated-list-item">
-                    <img src="https://placehold.co/100" alt="Placeholder image">
-                    <h2>Top 10 Grunge Songs!!1</h2>
-                    <p>by: <a href="#">CurtKobayashi</a></p>
-                </div>
-                <div class="user-curated-list-item">
-                    <img src="https://placehold.co/100" alt="Placeholder image">
-                    <h2>As melhor Breganejo</h2>
-                    <p>by: <a href="#">JucimeireDantas22</a></p>
-                </div>
-                <div class="user-curated-list-item">
-                    <img src="https://placehold.co/100" alt="Placeholder image">
-                    <h2>Deep House songs</h2>
-                    <p>by: <a href="#">johndoe</a></p>
-                </div>
-                <div class="user-curated-list-item">
-                    <img src="https://placehold.co/100" alt="Placeholder image">
-                    <h2>Pablo Marçal-themed songs</h2>
-                    <p>by: <a href="#">burro_idiota</a></p>
-                </div>
-            </div>
-        </section>
-
-        <section class="latest-forum-discussions-container">
-            <h2><i class="fas fa-comments"></i> Latest forum discussions</h2>
-            <div class="forum-discussions">
-                <div class="forum-discussion">
-                    <h3><a href="#discussion1">Best guitar solos of all time</a></h3>
-                    <p>Started by: <a href="#user1"><i class="fas fa-user"></i> Guitar_Hero_99</a> | Replies: 42</p>
-                </div>
-                <div class="forum-discussion">
-                    <h3><a href="#discussion2">I know it's unrelated but my TV broke</a></h3>
-                    <p>Started by: <a href="#user2"><i class="fas fa-user"></i> JuanRodrigues</a> | Replies: 18</p>
-                </div>
-                <div class="forum-discussion">
-                    <h3><a href="#discussion3">How to produce lo-fi beats?</a></h3>
-                    <p>Started by: <a href="#user3"><i class="fas fa-user"></i> LoFiLover</a> | Replies: 27</p>
-                </div>
-            </div>
-        </section>
-
     </main>
     <footer>
         <p>&copy; Musicæ | All rights reserved</p>
