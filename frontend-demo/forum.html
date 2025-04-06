@@ -1,0 +1,531 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Musicæ</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+    <style>
+        :root {
+            --primary-color: #ff6347;
+            --secondary-color: #2c3e50;
+            --text-color: #2c3e50;
+            --light-bg-color: #ecf0f1;
+            --border-radius: 8px;
+            --box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+            --hover-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Helvetica, Arial, sans-serif;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+
+        body {
+            background-color: var(--light-bg-color);
+            color: var(--text-color);
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px;
+            background-color: var(--secondary-color);
+            color: white;
+        }
+
+        .logo {
+            font-family: 'Consolas', 'Courier New', Courier, monospace;
+            font-size: 28px;
+            font-weight: bold;
+            background: linear-gradient(90deg, var(--primary-color), #ff8c69);
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .search-bar {
+            display: flex;
+            gap: 10px;
+            align-items: center;
+        }
+
+        .search-bar input {
+            padding: 10px;
+            width: 300px;
+            border: 1px solid #ccc;
+            border-radius: var(--border-radius);
+            font-size: 14px;
+        }
+
+        .search-bar button {
+            padding: 10px 16px;
+            background-color: var(--primary-color);
+            color: white;
+            border: none;
+            border-radius: var(--border-radius);
+            cursor: pointer;
+            transition: background-color 0.3s, box-shadow 0.3s;
+        }
+
+        .search-bar button:hover {
+            background-color: #e55b40;
+            box-shadow: var(--hover-shadow);
+        }
+
+        .user-options {
+            display: flex;
+            gap: 10px;
+            font-size: 14px;
+        }
+
+        .user-options a,
+        .user-options button {
+            color: var(--primary-color);
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        .user-options a:hover,
+        .user-options button:hover {
+            color: #e55b40;
+        }
+
+        .user-options form {
+            display: inline;
+        }
+
+        .user-options button {
+            background: none;
+            border: none;
+            color: var(--primary-color);
+            cursor: pointer;
+            font-size: 14px;
+            transition: color 0.3s;
+        }
+
+        .user-options button:hover {
+            color: #e55b40;
+            text-decoration: underline;
+        }
+
+        main {
+            padding: 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+            flex: 1;
+            min-width: 800px;
+        }
+
+        .forum-header {
+            text-align: center;
+            margin-bottom: 20px;
+            padding: 20px;
+            background-color: white;
+            border-radius: var(--border-radius);
+            box-shadow: var(--box-shadow);
+            max-width: 1200px;
+            margin: 0 auto;
+            min-width: 800px;
+        }
+
+        .forum-header h1 {
+            font-size: 24px;
+            color: var(--text-color);
+        }
+
+        .forum-header p {
+            font-size: 16px;
+            color: var(--text-color);
+            margin-top: 10px;
+        }
+
+        .forum-header form {
+            display: flex;
+            gap: 10px;
+            justify-content: center;
+            margin-top: 20px;
+        }
+
+        .forum-header form input {
+            padding: 10px;
+            width: 100%;
+            max-width: 400px;
+            border: 1px solid #ccc;
+            border-radius: var(--border-radius);
+            font-size: 14px;
+        }
+
+        .forum-header form button {
+            padding: 10px 16px;
+            background-color: var(--primary-color);
+            color: white;
+            border: none;
+            border-radius: var(--border-radius);
+            cursor: pointer;
+            transition: background-color 0.3s, box-shadow 0.3s;
+        }
+
+        .forum-header form button:hover {
+            background-color: #e55b40;
+            box-shadow: var(--hover-shadow);
+        }
+
+        .forum-categories {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 20px;
+            padding: 20px;
+            background-color: white;
+            border-radius: var(--border-radius);
+            box-shadow: var(--box-shadow);
+            max-width: 1200px;
+            margin: 0 auto;
+            min-width: 800px;
+        }
+
+        .forum-categories h1 {
+            align-self: flex-start;
+            font-size: 24px;
+            color: var(--text-color);
+            margin-bottom: 10px;
+        }
+
+        .forum-categories-items {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+            width: 100%;
+        }
+
+        .forum-categories-item {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            padding: 10px;
+            border: 1px solid #e0e0e0;
+            border-radius: var(--border-radius);
+            transition: box-shadow 0.3s, background-color 0.3s;
+        }
+
+        .forum-categories-item img {
+            max-width: 50px;
+            height: auto;
+            margin-bottom: 10px;
+            border-radius: var(--border-radius);
+        }
+
+        .forum-categories-item h2 {
+            font-size: 16px;
+            color: var(--text-color);
+        }
+
+        .forum-categories-item:hover {
+            box-shadow: var(--hover-shadow);
+            background-color: #f5f6f5;
+        }
+
+        @media (max-width: 640px) {
+            .forum-categories-items {
+                flex-direction: column;
+            }
+        }
+
+        .forum-popular-discussions {
+            background-color: white;
+            padding: 20px;
+            margin-bottom: 20px;
+            border-radius: var(--border-radius);
+            box-shadow: var(--box-shadow);
+            max-width: 1200px;
+            margin: 0 auto;
+            min-width: 800px;
+        }
+
+        .forum-header,
+        .forum-categories,
+        .forum-popular-discussions {
+            margin-bottom: 20px;
+        }
+
+        .popular-discussions-items {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        .popular-discussion-item {
+            padding: 10px;
+            border: 1px solid #e0e0e0;
+            border-radius: var(--border-radius);
+            transition: box-shadow 0.3s, background-color 0.3s;
+        }
+
+        .popular-discussion-item:hover {
+            box-shadow: var(--hover-shadow);
+            background-color: #f5f6f5;
+        }
+
+        .popular-discussion-item h2 {
+            font-size: 16px;
+            margin-bottom: 5px;
+            color: var(--text-color);
+        }
+
+        .popular-discussion-item p {
+            font-size: 14px;
+            color: var(--text-color);
+        }
+
+        .popular-discussion-item p a {
+            color: var(--primary-color);
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        .popular-discussion-item p a:hover {
+            color: #e55b40;
+        }
+
+        @media (max-width: 640px) {
+            .popular-discussions-items {
+                flex-direction: column;
+            }
+        }
+
+        .start-discussion-container {
+            background-color: white;
+            padding: 25px;
+            margin-bottom: 20px;
+            border-radius: var(--border-radius);
+            box-shadow: var(--box-shadow);
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            align-items: center;
+            gap: 20px;
+        }
+
+        .start-discussion-header {
+            flex: 1;
+            text-align: left;
+            padding-right: 20px;
+        }
+
+        .start-discussion-form {
+            flex: 1;
+            text-align: left;
+        }
+
+        .start-discussion-form form {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        .start-discussion-form form label {
+            font-size: 14px;
+            font-weight: bold;
+            color: var(--text-color);
+        }
+
+        .start-discussion-form form input,
+        .start-discussion-form form textarea {
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: var(--border-radius);
+            font-size: 14px;
+            width: 100%;
+            box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1);
+        }
+
+        .start-discussion-form form textarea {
+            resize: vertical;
+        }
+
+        .start-discussion-form form button {
+            padding: 12px 20px;
+            background-color: var(--primary-color);
+            color: white;
+            border: none;
+            border-radius: var(--border-radius);
+            font-size: 16px;
+            cursor: pointer;
+            transition: background-color 0.3s, box-shadow 0.3s;
+            align-self: stretch;
+        }
+
+        .start-discussion-form form button:hover {
+            background-color: #e55b40;
+            box-shadow: var(--hover-shadow);
+        }
+
+        @media (max-width: 640px) {
+            .start-discussion-container {
+                flex-direction: column;
+                padding: 20px;
+            }
+
+            .start-discussion-header,
+            .start-discussion-form {
+                text-align: left;
+            }
+
+            .start-discussion-header {
+                padding-right: 0;
+            }
+
+            .start-discussion-container h1 {
+                font-size: 20px;
+            }
+
+            .start-discussion-form form {
+                gap: 10px;
+            }
+        }
+
+        footer {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            text-align: center;
+            padding: 10px;
+            background-color: var(--secondary-color);
+            color: white;
+            font-size: 14px;
+            position: relative;
+        }
+
+        footer p {
+            margin: 0;
+        }
+
+        .footer-links {
+            display: flex;
+            gap: 10px;
+        }
+
+        footer:hover {
+            background-color: rgba(44, 62, 80, 0.8);
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <a href="index.html" class="logo"><i class="fas fa-music"></i> Music<strong>æ</strong></a>
+        <div class="search-bar">
+            <form action="#" method="GET">
+                <input type="text" name="q" placeholder="Search songs, albums, or artists...">
+                <button type="submit"><i class="fas fa-search"></i> Search</button>
+            </form>
+        </div>
+        <div class="user-options">
+            <span><i class="fas fa-user"></i> Welcome, user</span> |
+            <a href="#profile"><i class="fas fa-user-circle"></i> My profile</a> |
+            <a href="#add"><i class="fas fa-plus-circle"></i> Add</a> |
+            <form method="POST" action="#logout" class="inline">
+                <button type="submit"><i class="fas fa-sign-out-alt"></i> Logout</button>
+            </form>
+        </div>
+    </header>
+    <main>
+        <section class="forum-header">
+            <h1>Welcome to the Musicæ forum!</h1>
+            <p>Discuss your favorite music topics here.</p>
+            <form action="#" method="POST">
+                <input type="text" name="topic" placeholder="Join the conversation..." required>
+                <button type="submit">Create new topic</button>
+                <button type="button">Search</button>
+            </form>
+        </section>
+        <section class="forum-categories">
+            <h1>Categories</h1>
+            <div class="forum-categories-items">
+                <div class="forum-categories-item">
+                    <img src="https://placehold.co/50" alt="Category visual representation">
+                    <h2>Rock</h2>
+                </div>
+                <div class="forum-categories-item">
+                    <img src="https://placehold.co/50" alt="Category visual representation">
+                    <h2>Jazz</h2>
+                </div>
+                <div class="forum-categories-item">
+                    <img src="https://placehold.co/50" alt="Category visual representation">
+                    <h2>Pop</h2>
+                </div>
+                <div class="forum-categories-item">
+                    <img src="https://placehold.co/50" alt="Category visual representation">
+                    <h2>Trap</h2>
+                </div>
+            </div>
+        </section>
+
+        <section class="forum-popular-discussions">
+            <h1><i class="fas fa-fire"></i> Popular discussions</h1>
+            <div class="popular-discussions-items">
+                <div class="popular-discussion-item">
+                    <h2><a href="#discussion1">Best rock albums of 2023</a></h2>
+                    <p>Started by: <a href="#user1"><i class="fas fa-user"></i> JoaoSilveira123</a> | Replies: 18</p>
+                </div>
+                <div class="popular-discussion-item">
+                    <h2><a href="#discussion2">Jazz legends: Who's your favorite?</a></h2>
+                    <p>Started by: <a href="#user2"><i class="fas fa-user"></i> redit</a> | Replies: 27</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="start-discussion-container">
+            <div class="start-discussion-header">
+                <h1><i class="fas fa-plus-circle"></i> Start a new discussion</h1>
+                <p>Share your thoughts with the community</p>
+            </div>
+            <div class="start-discussion-form">
+                <form action="#" method="POST">
+                    <label for="discussion-title">Title:</label>
+                    <input type="text" id="discussion-title" name="discussion-title" placeholder="Discussion title" required>
+                    <p>Be descriptive</p>
+
+                    <label for="discussion-content">Content:</label>
+                    <textarea id="discussion-content" name="discussion-content" rows="5" placeholder="Write your thoughts..." maxlength="500" required></textarea>
+                    <p>Be respectful and constructive</p>
+                    <p>Maximum 500 characters</p>
+
+                    <button type="submit">Post</button>
+                </form>
+            </div>
+        </section>
+
+    </main>
+    <footer>
+        <p>&copy; Musicæ | All rights reserved</p>
+        <div class="footer-links">
+            <a href="#contact">Contact us</a> |
+            <a href="#privacy-policy">Privacy policy</a> |
+            <a href="#terms-and-conditions">Terms and conditions</a>
+        </div>
+    </footer>
+
+</body>
+
+</html>
