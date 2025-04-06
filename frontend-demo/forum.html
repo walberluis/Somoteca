@@ -442,8 +442,10 @@
         </div>
         <div class="user-options">
             <span><i class="fas fa-user"></i> Welcome, user</span> |
-            <a href="#profile"><i class="fas fa-user-circle"></i> My profile</a> |
-            <a href="#add"><i class="fas fa-plus-circle"></i> Add</a> |
+            <a href="profile.html"><i class="fas fa-user-circle"></i> My profile</a> |
+            <a href=""><i class="fas fa-plus-circle"></i> Add</a> |
+            <a href="forum.html"><i class="fas fa-comments"></i> Forum</a> |
+            <a href="album.html"><i class="fas fa-compact-disc"></i> Albums</a> |
             <form method="POST" action="#logout" class="inline">
                 <button type="submit"><i class="fas fa-sign-out-alt"></i> Logout</button>
             </form>
@@ -503,11 +505,13 @@
             <div class="start-discussion-form">
                 <form action="#" method="POST">
                     <label for="discussion-title">Title:</label>
-                    <input type="text" id="discussion-title" name="discussion-title" placeholder="Discussion title" required>
+                    <input type="text" id="discussion-title" name="discussion-title" placeholder="Discussion title"
+                        required>
                     <p>Be descriptive</p>
 
                     <label for="discussion-content">Content:</label>
-                    <textarea id="discussion-content" name="discussion-content" rows="5" placeholder="Write your thoughts..." maxlength="500" required></textarea>
+                    <textarea id="discussion-content" name="discussion-content" rows="5"
+                        placeholder="Write your thoughts..." maxlength="500" required></textarea>
                     <p>Be respectful and constructive</p>
                     <p>Maximum 500 characters</p>
 

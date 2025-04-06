@@ -227,13 +227,8 @@
         }
 
         .star-rating {
-            display: flex;
-            gap: 5px;
-            margin-top: 5px;
-        }
-
-        .star-rating i {
-            color: #ff6347;
+            color: gold;
+            font-size: 1.2em;
         }
 
         .related-album-item {
@@ -306,7 +301,7 @@
 
 <body>
     <header>
-        <a href="/" class="logo"><i class="fas fa-music"></i> Music<strong>æ</strong></a>
+        <a href="index.html" class="logo"><i class="fas fa-music"></i> Music<strong>æ</strong></a>
         <div class="search-bar">
             <form action="#" method="GET">
                 <input type="text" name="q" placeholder="Search songs, albums, or artists...">
@@ -315,8 +310,10 @@
         </div>
         <div class="user-options">
             <span><i class="fas fa-user"></i> Welcome, user</span> |
-            <a href="#profile"><i class="fas fa-user-circle"></i> My profile</a> |
-            <a href="#add"><i class="fas fa-plus-circle"></i> Add</a> |
+            <a href="profile.html"><i class="fas fa-user-circle"></i> My profile</a> |
+            <a href=""><i class="fas fa-plus-circle"></i> Add</a> |
+            <a href="forum.html"><i class="fas fa-comments"></i> Forum</a> |
+            <a href="album.html"><i class="fas fa-compact-disc"></i> Albums</a> |
             <form method="POST" action="#logout" class="inline">
                 <button type="submit"><i class="fas fa-sign-out-alt"></i> Logout</button>
             </form>
@@ -369,11 +366,7 @@
                         <h2>User 1</h2>
                         <p>Review: This album is amazing!</p>
                         <div class="star-rating">
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
+                            ★★★★★
                         </div>
                     </div>
                 </div>
@@ -383,11 +376,7 @@
                         <h2>User 2</h2>
                         <p>Review: I love the sound of this album.</p>
                         <div class="star-rating">
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="far fa-star"></i>
+                            ★★★½☆
                         </div>
                     </div>
                 </div>
@@ -397,11 +386,7 @@
                         <h2>User 3</h2>
                         <p>Review: A masterpiece!</p>
                         <div class="star-rating">
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
+                            ★★★★★
                         </div>
                     </div>
                 </div>
