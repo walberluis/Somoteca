@@ -51,8 +51,6 @@
         }
 
         .logo {
-            /* font-family: 'Consolas', 'Courier New', Courier, monospace; */
-            
             font-size: 28px;
             font-weight: bold;
             background: linear-gradient(90deg, var(--primary-color), #ff8c69);
@@ -127,27 +125,10 @@
         }
 
         main {
-            max-width: 800px;
+            max-width: 1000px;
             margin: 0 auto;
             padding: 20px;
             flex: 1;
-        }
-
-        .profile-header {
-            margin-bottom: 25px;
-        }
-
-        .profile-header h1 {
-            font-size: 2rem;
-            font-weight: bold;
-            color: var(--text-color);
-            margin-bottom: 8px;
-        }
-
-        .profile-header h2 {
-            font-size: 1.5rem;
-            color: var(--text-color);
-            margin-bottom: 12px;
         }
 
         .review-card {
@@ -251,13 +232,12 @@
             background-color: rgba(44, 62, 80, 0.8);
         }
 
-        .profile-container {
+        .review-cards-container {
             background-color: white;
             padding: 30px;
             border-radius: var(--border-radius);
             box-shadow: var(--box-shadow);
             margin-bottom: 20px;
-            min-width: 800px;
         }
 
         .star-rating {
@@ -265,9 +245,318 @@
             font-size: 1.2em;
         }
 
-        .star-rating {
-            color: gold;
-            font-size: 1.2em;
+        section {
+            margin-bottom: 20px;
+            min-width: 900px;
+        }
+
+        .profile-header {
+            position: relative;
+            background-color: var(--light-bg-color);
+            border-radius: var(--border-radius);
+            box-shadow: var(--box-shadow);
+            margin-bottom: 30px;
+        }
+
+        .profile-banner {
+            height: 200px;
+            overflow: hidden;
+            border-radius: var(--border-radius) var(--border-radius) 0 0;
+            position: relative;
+            z-index: 0;
+        }
+
+        .profile-banner img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .profile-header-content {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+            padding: 20px;
+            background-color: white;
+            border-radius: 0 0 var(--border-radius) var(--border-radius);
+            margin-top: 0;
+            position: relative;
+            z-index: 1;
+        }
+
+        .profile-header-info {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            position: relative; /* Ensure proper stacking */
+        }
+
+        .profile-header-info img {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            border: 4px solid white;
+            position: absolute; /* Allow overlap */
+            top: -50px; /* Adjust to overlap the banner */
+            left: 20px; /* Add some spacing from the left */
+            z-index: 2; /* Ensure it appears above the banner */
+        }
+
+        .profile-header-details {
+            margin-left: 140px; /* Offset to account for the profile picture */
+        }
+
+        .profile-header-details h1 {
+            font-size: 22px;
+            margin-bottom: 5px;
+            color: var(--text-color);
+            position: relative;
+        }
+
+        .profile-header-details p {
+            font-size: 14px;
+            color: var(--text-color);
+            margin-bottom: 5px;
+        }
+
+        .profile-header-actions {
+            display: flex;
+            gap: 10px;
+            margin-left: auto;
+        }
+
+        .profile-header-actions button {
+            padding: 8px 12px;
+            font-size: 14px;
+            background-color: var(--primary-color);
+            color: white;
+            border: none;
+            border-radius: var(--border-radius);
+            cursor: pointer;
+            transition: background-color 0.3s, box-shadow 0.3s;
+        }
+
+        .profile-header-actions button:hover {
+            background-color: #e55b40;
+            box-shadow: var(--hover-shadow);
+        }
+
+        .users-friends-container {
+            background-color: white;
+            padding: 20px;
+            border-radius: var(--border-radius);
+            box-shadow: var(--box-shadow);
+            margin-bottom: 20px;
+        }
+
+        .users-friends-container h1 {
+            font-size: 22px;
+            margin-bottom: 20px;
+            color: var(--text-color);
+        }
+
+        .friend-card {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            gap: 15px;
+            background-color: white;
+            padding: 20px;
+            border-radius: var(--border-radius);
+            box-shadow: var(--box-shadow);
+            transition: box-shadow 0.3s, background-color 0.3s;
+            margin-bottom: 15px;
+        }
+
+        .friend-card:hover {
+            box-shadow: var(--hover-shadow);
+            background-color: #f5f6f5;
+        }
+
+        .friend-card img {
+            max-width: 70px;
+            height: auto;
+            border-radius: var(--border-radius);
+        }
+
+        .friend-info {
+            flex: 1;
+        }
+
+        .friend-action {
+            padding: 10px 15px;
+            background-color: var(--primary-color);
+            color: white;
+            border: none;
+            border-radius: var(--border-radius);
+            cursor: pointer;
+            transition: background-color 0.3s, box-shadow 0.3s;
+        }
+
+        .friend-action:hover {
+            background-color: #e55b40;
+            box-shadow: var(--hover-shadow);
+        }
+
+        .users-lists-container {
+            background-color: white;
+            padding: 20px;
+            border-radius: var(--border-radius);
+            box-shadow: var(--box-shadow);
+            margin-bottom: 20px;
+        }
+
+        .users-lists-container h1 {
+            font-size: 22px;
+            margin-bottom: 20px;
+            color: var(--text-color);
+        }
+
+        .users-lists-container h1 {
+            font-size: 20px;
+            margin-bottom: 15px;
+        }
+
+        .list-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+        }
+
+        .list-card {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            background-color: white;
+            padding: 15px;
+            border-radius: var(--border-radius);
+            box-shadow: var(--box-shadow);
+            transition: box-shadow 0.3s, background-color 0.3s;
+        }
+
+        .list-card:hover {
+            box-shadow: var(--hover-shadow);
+            background-color: #f5f6f5;
+        }
+
+        .list-card h2 {
+            font-size: 18px;
+            margin-bottom: 8px;
+        }
+
+        .list-card p {
+            font-size: 14px;
+            color: var(--text-color);
+            margin-bottom: 10px;
+        }
+
+        .list-action {
+            align-self: flex-end;
+            padding: 10px 15px;
+            font-size: 14px;
+            background-color: var(--primary-color);
+            color: white;
+            border: none;
+            border-radius: var(--border-radius);
+            text-decoration: none;
+            cursor: pointer;
+            transition: background-color 0.3s, box-shadow 0.3s;
+        }
+
+        .list-action:hover {
+            background-color: #e55b40;
+            box-shadow: var(--hover-shadow);
+        }
+
+        .view-all-lists {
+            text-align: right; /* Align the button to the right */
+            margin-top: 20px;
+        }
+
+        .view-all-button {
+            display: inline-block;
+            padding: 10px 20px;
+            font-size: 14px;
+            background-color: var(--primary-color);
+            color: white;
+            border-radius: var(--border-radius);
+            text-decoration: none;
+            transition: background-color 0.3s, box-shadow 0.3s;
+        }
+
+        .view-all-button:hover {
+            background-color: #e55b40;
+            box-shadow: var(--hover-shadow);
+        }
+
+        .view-all-reviews,
+        .view-all-friends,
+        .view-all-discussions {
+            text-align: right; /* Align the buttons to the right */
+            margin-top: 20px;
+        }
+
+        .users-forum-discussions-container {
+            background-color: white;
+            padding: 20px;
+            border-radius: var(--border-radius);
+            box-shadow: var(--box-shadow);
+            margin-bottom: 20px;
+        }
+
+        .users-forum-discussions-container h2 {
+            font-size: 22px;
+            margin-bottom: 20px;
+            color: var(--text-color);
+        }
+
+        .forum-discussions {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        .forum-discussion {
+            padding: 15px;
+            border: 1px solid #e0e0e0;
+            border-radius: var(--border-radius);
+            transition: box-shadow 0.3s, background-color 0.3s;
+        }
+
+        .forum-discussion:hover {
+            box-shadow: var(--hover-shadow);
+            background-color: #f9f9f9;
+        }
+
+        .forum-discussion h3 {
+            font-size: 18px;
+            margin-bottom: 5px;
+            color: var(--text-color);
+        }
+
+        .forum-discussion h3 a {
+            color: var(--primary-color);
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        .forum-discussion h3 a:hover {
+            color: #e55b40;
+        }
+
+        .forum-discussion p {
+            font-size: 14px;
+            color: var(--text-color);
+        }
+
+        .forum-discussion p a {
+            color: var(--primary-color);
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        .forum-discussion p a:hover {
+            color: #e55b40;
         }
     </style>
 </head>
@@ -293,11 +582,31 @@
         </div>
     </header>
     <main>
-        <section class="profile-container">
-            <div class="profile-header">
-                <h1>User's profile</h1>
-                <h2>Your reviews</h2>
+
+        <section class="profile-header">
+            <div class="profile-banner">
+                <img src="https://placehold.co/1200x300" alt="Profile Banner">
             </div>
+            <div class="profile-header-content">
+                <div class="profile-header-info">
+                    <img src="https://placehold.co/100" alt="Profile Picture">
+                    <div class="profile-header-details">
+                        <h1>Username</h1>
+                        <p>Bio[graphical info[rmation]]</p>
+                        <p>Follow me on MusicHub too: <a
+                            href="https://youtu.be/fArweHa6HzU?si=yyYBytx0lBnQNkOp"
+                            target="_blank"
+                            rel="noopener noreferrer">musicus-hubius.co.uk</a></p>
+                    </div>
+                </div>
+                <div class="profile-header-actions">
+                    <button>Add friend</button>
+                    <button>Edit profile</button>
+                </div>
+            </div>
+        </section>
+        <section class="review-cards-container">
+            <h1>Reviews</h1>
             <div class="review-card">
                 <img src="https://placehold.co/60" alt="Capa do álbum">
                 <div class="review-content">
@@ -319,12 +628,78 @@
                     <span class="date">02/02/2023 14:30</span>
                 </div>
             </div>
-
-            <div class="profile-container-actions">
-                <a href="edit-profile.html" class="edit-profile">Edit profile</a>
-                <!-- <a href="index.html" class="back-home">Voltar para a Home</a> -->
+            <div class="view-all-reviews">
+                <a href="#" class="view-all-button"><i class="fas fa-arrow-right"></i> See all</a>
             </div>
         </section>
+        <section class="users-friends-container">
+            <h1>Friends</h1>
+            <div class="friend-card">
+                <img src="https://placehold.co/60" alt="Friend's Profile Picture">
+                <div class="friend-info">
+                    <p><strong>Friend Name</strong></p>
+                    <p>Last active: 2 hours ago</p>
+                </div>
+                <button class="friend-action">Message</button>
+            </div>
+            <div class="friend-card">
+                <img src="https://placehold.co/60" alt="Friend's Profile Picture">
+                <div class="friend-info">
+                    <p><strong>Another Friend</strong></p>
+                    <p>Last active: 1 day ago</p>
+                </div>
+                <button class="friend-action">Message</button>
+            </div>
+            <div class="view-all-friends">
+                <a href="#" class="view-all-button"><i class="fas fa-arrow-right"></i> See all</a>
+            </div>
+        </section>
+        <section class="users-lists-container">
+            <div class="profile-container-header">
+                <h1><i class="fas fa-list"></i> Lists</h1>
+            </div>
+            <div class="list-grid">
+                <div class="list-card">
+                    <h2>Favorite Albums :3</h2>
+                    <p>10 items</p>
+                    <a href="list-details.html" class="list-action">View list</a>
+                </div>
+                <div class="list-card">
+                    <h2>top artists</h2>
+                    <p>5 items</p>
+                    <a href="list-details.html" class="list-action">View list</a>
+                </div>
+                <div class="list-card">
+                    <h2>Chill vibes</h2>
+                    <p>8 items</p>
+                    <a href="list-details.html" class="list-action">View list</a>
+                </div>
+            </div>
+            <div class="view-all-lists">
+                <a href="#" class="view-all-button"><i class="fas fa-arrow-right"></i> See all</a>
+            </div>
+        </section>
+        <section class="users-forum-discussions-container">
+            <h2><i class="fas fa-comments"></i> Discussions on the Musicæ forum</h2>
+            <div class="forum-discussions">
+                <div class="forum-discussion">
+                    <h3><a href="#discussion4">Top 10 underrated albums</a></h3>
+                    <p>Replies: 35</p>
+                </div>
+                <div class="forum-discussion">
+                    <h3><a href="#discussion5">Best live performances ever</a></h3>
+                    <p>Replies: 50</p>
+                </div>
+                <div class="forum-discussion">
+                    <h3><a href="#discussion6">How to start learning music theory?</a></h3>
+                    <p>Replies: 20</p>
+                </div>
+            </div>
+            <div class="view-all-discussions">
+                <a href="#" class="view-all-button"><i class="fas fa-arrow-right"></i> See all</a>
+            </div>
+        </section>
+
     </main>
     <footer>
         <p>&copy; Musicæ | All rights reserved</p>
