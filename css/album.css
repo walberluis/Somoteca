@@ -1,0 +1,137 @@
+
+
+.tracklist-container {
+    display: grid;
+    grid-template-columns: 1fr 4fr;
+    gap: 20px;
+    background-color: white;
+    padding: 20px;
+    border-radius: var(--border-radius);
+    box-shadow: var(--box-shadow);
+}
+
+.tracklist-header {
+    grid-column: span 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.tracklist-items {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    margin-left: 20px;
+}
+
+.tracklist-item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    text-align: left;
+    padding: 8px;
+    border: 1px solid #e0e0e0;
+    border-radius: var(--border-radius);
+    transition: box-shadow 0.3s, background-color 0.3s;
+    width: 80%;
+    margin-left: auto;
+}
+
+.tracklist-item img {
+    flex-shrink: 0;
+    max-width: 80px;
+    height: auto;
+    border-radius: var(--border-radius);
+}
+
+.tracklist-item:hover {
+    box-shadow: var(--hover-shadow);
+    background-color: #f5f6f5;
+}
+
+.user-album-reviews-container {
+    background-color: white;
+    padding: 20px;
+    border-radius: var(--border-radius);
+    box-shadow: var(--box-shadow);
+    margin-bottom: 20px;
+}
+
+.user-album-reviews-items {
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.user-album-review-item {
+    flex: 1 1 calc(33.333% - 20px);
+    max-width: calc(33.333% - 20px);
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    text-align: left;
+    padding: 20px;
+    border: 1px solid #e0e0e0;
+    border-radius: var(--border-radius);
+    transition: box-shadow 0.3s, background-color 0.3s;
+}
+
+.user-album-review-item img {
+    max-width: 64px;
+    height: auto;
+    border-radius: 50%;
+    margin-right: 15px;
+}
+
+.user-album-review-item:hover {
+    box-shadow: var(--hover-shadow);
+    background-color: #f5f6f5;
+}
+
+.star-rating {
+    color: gold;
+    font-size: 1.2em;
+}
+
+.related-album-item {
+    text-align: center;
+    padding: 10px;
+    border: 1px solid #e0e0e0;
+    border-radius: var(--border-radius);
+    transition: box-shadow 0.3s, background-color 0.3s;
+}
+
+.related-album-item img {
+    max-width: 100px;
+    height: auto;
+    border-radius: var(--border-radius);
+    margin-bottom: 10px;
+}
+
+.related-album-item:hover {
+    box-shadow: var(--hover-shadow);
+    background-color: #f5f6f5;
+}
+
+.related-albums-container {
+    display: grid;
+    grid-template-columns: 1fr 4fr;
+    gap: 20px;
+    background-color: white;
+    padding: 20px;
+    border-radius: var(--border-radius);
+    box-shadow: var(--box-shadow);
+}
+
+.related-albums-header {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+}
+
+.related-albums-items {
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+}

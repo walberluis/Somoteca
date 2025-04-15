@@ -1,0 +1,215 @@
+.highlights-container,
+.upcoming-events-container,
+.user-curated-lists-container {
+    background-color: white;
+    padding: 20px;
+    margin-bottom: 20px;
+    border-radius: var(--border-radius);
+    box-shadow: var(--box-shadow);
+}
+
+.highlight-items,
+.event-items,
+.user-curated-lists-items {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+}
+
+.highlight-item {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    text-align: left;
+    padding: 10px;
+    border: 1px solid #e0e0e0;
+    border-radius: var(--border-radius);
+    transition: box-shadow 0.3s, background-color 0.3s;
+}
+
+.highlight-item img {
+    max-width: 100px;
+    height: auto;
+    border-radius: var(--border-radius);
+    margin-right: 10px;
+}
+
+.highlight-item .user-info {
+    display: flex;
+    align-items: center;
+    margin-top: 10px;
+    font-size: 12px;
+    color: var(--text-color);
+}
+
+.highlight-item .user-info img {
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    margin-right: 8px;
+}
+
+.highlight-item:hover {
+    box-shadow: var(--hover-shadow);
+    background-color: #f5f6f5;
+}
+
+.highlight-item .user-info a,
+.event-item a,
+.user-curated-list-item p a {
+    color: var(--primary-color);
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.highlight-item .user-info a:hover,
+.event-item a:hover,
+.user-curated-list-item p a:hover {
+    color: #e55b40;
+}
+
+.event-item,
+.user-curated-list-item {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 10px;
+    border: 1px solid #e0e0e0;
+    border-radius: var(--border-radius);
+    transition: box-shadow 0.3s, background-color 0.3s;
+}
+
+.event-item:hover,
+.user-curated-list-item:hover {
+    box-shadow: var(--hover-shadow);
+    background-color: #f5f6f5;
+}
+
+.event-item img,
+.user-curated-list-item img {
+    max-width: 100%;
+    height: auto;
+    border-radius: var(--border-radius);
+    margin-bottom: 10px;
+}
+
+.user-curated-lists-container {
+    display: grid;
+    grid-template-columns: 1fr 4fr;
+    gap: 20px;
+    background-color: white;
+    padding: 20px;
+    border-radius: var(--border-radius);
+    box-shadow: var(--box-shadow);
+}
+
+.user-curated-lists-items {
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+}
+
+.user-curated-lists-header {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.user-curated-list-item {
+    text-align: center;
+    padding: 10px;
+    border: 1px solid #e0e0e0;
+    border-radius: var(--border-radius);
+    transition: box-shadow 0.3s, background-color 0.3s;
+}
+
+.user-curated-list-item img {
+    max-width: 100px;
+    height: auto;
+    border-radius: var(--border-radius);
+    margin-bottom: 10px;
+}
+
+.user-curated-list-item:hover {
+    box-shadow: var(--hover-shadow);
+    background-color: #f5f6f5;
+}
+
+.user-curated-list-item h2 {
+    font-size: 16px;
+    margin-bottom: 5px;
+}
+
+.user-curated-list-item p {
+    font-size: 14px;
+    color: var(--text-color);
+}
+
+.user-curated-list-item p a {
+    color: var(--primary-color);
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.user-curated-list-item p a:hover {
+    color: #e55b40;
+}
+
+.latest-forum-discussions-container {
+    background-color: white;
+    padding: 20px;
+    margin-bottom: 20px;
+    border-radius: var(--border-radius);
+    box-shadow: var(--box-shadow);
+    margin-top: 20px;
+}
+
+.forum-discussions {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.forum-discussion {
+    padding: 10px;
+    border: 1px solid #e0e0e0;
+    border-radius: var(--border-radius);
+    transition: box-shadow 0.3s, background-color 0.3s;
+}
+
+.forum-discussion:hover {
+    box-shadow: var(--hover-shadow);
+    background-color: #f5f6f5;
+}
+
+.forum-discussion h3 {
+    font-size: 16px;
+    margin-bottom: 5px;
+}
+
+.forum-discussion h3 a {
+    color: var(--primary-color);
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.forum-discussion h3 a:hover {
+    color: #e55b40;
+}
+
+.forum-discussion p {
+    font-size: 14px;
+    color: var(--text-color);
+}
+
+.forum-discussion p a {
+    color: var(--primary-color);
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.forum-discussion p a:hover {
+    color: #e55b40;
+}
